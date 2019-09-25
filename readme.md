@@ -516,3 +516,14 @@ Get depth of menu.
 * Use cache
 * Use data structures
 * Use docker
+
+
+## How to Setup Project Laravel
+
+
+- Make sure Docker is installed and running
+- Clone Project
+- Run docker-compose exec app composer install
+- Edit .env with credentials from docker-compose.yml
+- Run docker-compose exec app php artisan migrate
+- App URL will be http://localhost:8080
