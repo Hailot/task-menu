@@ -15,7 +15,7 @@ class MenuItemController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return MenuItemResource
      */
     public function store($menu,StoreMenuItemRequest $request)
     {
@@ -30,7 +30,7 @@ class MenuItemController extends Controller
      * Display the specified resource.
      *
      * @param  mixed  $menu
-     * @return \Illuminate\Http\Response
+     * @return MenuItemCollection
      */
     public function show($menu)
     {
@@ -56,5 +56,5 @@ class MenuItemController extends Controller
 
         return response()->json(null,204);
     }
-    }
+
 }

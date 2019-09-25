@@ -20,9 +20,9 @@ class ItemChildrenController extends Controller
     {
         $item = Item::findOrFail($item);
 
-        $item->children()->create($request->only(['name','item_id']));
+        $child = $item->children()->create($request->only(['name','item_id']));
 
-        return new ItemResource($item);
+        return new ItemResource($child);
     }
 
     /**

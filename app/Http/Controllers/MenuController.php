@@ -17,7 +17,7 @@ class MenuController extends Controller
      */
     public function store(StoreMenuRequest $request)
     {
-        $menu = Menu::create();
+        $menu = Menu::create($request->only('name'));
 
         return new MenuResource($menu);
     }
@@ -45,7 +45,7 @@ class MenuController extends Controller
     {
         $menu = Menu::findOrFail($menu);
 
-        $menu->update();
+        $menu->update($request->only('name'));
 
         return new MenuResource($menu);
     }

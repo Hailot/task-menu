@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreItemRequest;
+use App\Http\Resources\ItemCollection;
 use App\Http\Resources\ItemResource;
 use App\Item;
 use Illuminate\Http\Request;
@@ -30,7 +31,9 @@ class ItemController extends Controller
      */
     public function show($item)
     {
-        $item = Item::findOrFail($item);
+        $item = Item::where('id',$item)
+            ->with('children')
+            ->get();
 
         return new ItemResource($item);
     }
@@ -42,7 +45,7 @@ class ItemController extends Controller
      * @param  mixed  $item
      * @return ItemResource
      */
-    public function update(Request $request, $item)
+    public function update(StoreItemRequest $request, $item)
     {
         $item = Item::findOrFail($item);
 
