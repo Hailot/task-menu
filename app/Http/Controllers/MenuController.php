@@ -13,7 +13,7 @@ class MenuController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return MenuResource
      */
     public function store(StoreMenuRequest $request)
     {
@@ -39,7 +39,7 @@ class MenuController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  mixed  $menu
-     * @return \Illuminate\Http\Response
+     * @return MenuResource
      */
     public function update(StoreMenuRequest $request,$menu)
     {
@@ -54,7 +54,7 @@ class MenuController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $menu
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($menu)
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Menu;
 use Illuminate\Http\Request;
 
 class MenuLayerController extends Controller
@@ -12,9 +13,9 @@ class MenuLayerController extends Controller
      * @param  mixed  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show($menu)
+    public function show($menu,$layer)
     {
-        //
+        $menu = Menu::findOrFail($menu);
     }
 
     /**

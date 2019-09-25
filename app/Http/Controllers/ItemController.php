@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Resources\ItemResource;
+use App\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -12,7 +13,7 @@ class ItemController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return ItemResource
      */
     public function store(StoreItemRequest $request)
     {
@@ -25,7 +26,7 @@ class ItemController extends Controller
      * Display the specified resource.
      *
      * @param  mixed  $item
-     * @return \Illuminate\Http\Response
+     * @return ItemResource
      */
     public function show($item)
     {
@@ -39,7 +40,7 @@ class ItemController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  mixed  $item
-     * @return \Illuminate\Http\Response
+     * @return ItemResource
      */
     public function update(Request $request, $item)
     {
@@ -54,7 +55,7 @@ class ItemController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $item
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($item)
     {
